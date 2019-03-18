@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--/* card_view layout */-->
+    <dimen name="cardView_cardElevation">5dp</dimen>
+    <dimen name="cardView_cardCornerRadius">5dp</dimen>
+    <dimen name="cardView_tv_margin">7dp</dimen>
+
+    <!--/* text size */-->
+    <dimen name="textSize">18sp</dimen>
+    <dimen name="label_textSize">14sp</dimen>
+
+    <!--/* activity_tweeter layout-->
+    <dimen name="activityMain_textInputLayoutMargin">20dp</dimen>
+    <dimen name="activityMain_textInputEditTextMargin">5dp</dimen>
+
+</resources>
