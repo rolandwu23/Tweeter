@@ -13,6 +13,7 @@ class BusinessLogicUnitTest {
         private val test2 = ""
         private val test3 = "                                                  "
         private val test4 = "Ican'tbelieveTweeternowsupportschunkingmymessages,soIdonot"
+        private val test5 = "I can't believe Tweeter now supports chunking my messages, so I don't have"
 
         private val ans1 = 1
         private val ans2 = -1
@@ -22,7 +23,9 @@ class BusinessLogicUnitTest {
         // For Answer Activity
         private val ans1_test1 = "I can't believe Tweeter now supports chunking"
         private val ans2_test1 = "my messages, so I don't have to do it myself."
-    }
+        private val ans1_test5 = "I can't believe Tweeter now supports chunking"
+        private val ans2_test5 = "my messages, so I don't have"
+     }
 
     @Test
     fun Test1() {
@@ -56,6 +59,18 @@ class BusinessLogicUnitTest {
         val twitSplitActivity = TweeterActivity()
         val result = twitSplitActivity.validateString(test4)
         MatcherAssert.assertThat(result, CoreMatchers.`is`(ans4))
+    }
+
+    @Test
+    fun Test5() {
+        val twitSplitActivity = TweeterActivity()
+        val result = twitSplitActivity.validateString(test5)
+        MatcherAssert.assertThat(result, CoreMatchers.`is`(ans1))
+
+        val answerActivity = AnswerActivity()
+        val arrayList = answerActivity.splitString(test5, 46)
+        MatcherAssert.assertThat(arrayList[0], CoreMatchers.`is`(ans1_test5))
+        MatcherAssert.assertThat(arrayList[1], CoreMatchers.`is`(ans2_test5))
     }
 
 }
